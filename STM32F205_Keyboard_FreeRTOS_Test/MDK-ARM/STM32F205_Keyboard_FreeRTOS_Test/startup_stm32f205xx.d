@@ -1,0 +1,1 @@
+stm32f205_keyboard_freertos_test\startup_stm32f205xx.o: startup_stm32f205xx.s

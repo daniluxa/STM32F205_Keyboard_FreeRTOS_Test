@@ -1,0 +1,747 @@
+[FileInfo]
+FileName=Keyboard_dict.eds
+FileVersion=1
+FileRevision=1
+EDSVersion=4.0
+Description=
+CreationTime=01:14PM
+CreationDate=09-18-2024
+CreatedBy=CANFestival
+ModificationTime=01:14PM
+ModificationDate=09-18-2024
+ModifiedBy=CANFestival
+
+[DeviceInfo]
+VendorName=CANFestival
+VendorNumber=0x00000000
+ProductName=
+ProductNumber=0x00000000
+RevisionNumber=0x00000000
+BaudRate_10=1
+BaudRate_20=1
+BaudRate_50=1
+BaudRate_125=1
+BaudRate_250=1
+BaudRate_500=1
+BaudRate_800=1
+BaudRate_1000=1
+SimpleBootUpMaster=0
+SimpleBootUpSlave=1
+Granularity=8
+DynamicChannelsSupported=0
+CompactPDO=0
+GroupMessaging=0
+NrOfRXPDO=0
+NrOfTXPDO=4
+LSS_Supported=0
+
+[DummyUsage]
+Dummy0001=0
+Dummy0002=1
+Dummy0003=1
+Dummy0004=1
+Dummy0005=1
+Dummy0006=1
+Dummy0007=1
+
+[Comments]
+Lines=0
+
+[MandatoryObjects]
+SupportedObjects=3
+1=0x1000
+2=0x1001
+3=0x1018
+
+[1000]
+ParameterName=Device Type
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=197009
+PDOMapping=0
+
+[1001]
+ParameterName=Error Register
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[1018]
+ParameterName=Identity
+ObjectType=0x9
+SubNumber=5
+
+[1018sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=4
+PDOMapping=0
+
+[1018sub1]
+ParameterName=Vendor ID
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[1018sub2]
+ParameterName=Product Code
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[1018sub3]
+ParameterName=Revision Number
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[1018sub4]
+ParameterName=Serial Number
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[OptionalObjects]
+SupportedObjects=20
+1=0x1003
+2=0x1005
+3=0x1006
+4=0x1008
+5=0x100C
+6=0x1010
+7=0x1011
+8=0x1012
+9=0x1014
+10=0x1016
+11=0x1017
+12=0x1200
+13=0x1800
+14=0x1801
+15=0x1802
+16=0x1803
+17=0x1A00
+18=0x1A01
+19=0x1A02
+20=0x1A03
+
+[1003]
+ParameterName=Pre-defined Error Field
+ObjectType=0x8
+SubNumber=2
+
+[1003sub0]
+ParameterName=Number of Errors
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[1003sub1]
+ParameterName=Standard Error Field
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=0
+
+[1005]
+ParameterName=SYNC COB ID
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=128
+PDOMapping=0
+
+[1006]
+ParameterName=Communication Cycle Period
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1008]
+ParameterName=Manufacturer Device Name
+ObjectType=0x7
+DataType=0x0009
+AccessType=ro
+DefaultValue=Keyboard
+PDOMapping=0
+
+[100C]
+ParameterName=Guard Time
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1010]
+ParameterName=Store parameters
+ObjectType=0x9
+SubNumber=5
+
+[1010sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=4
+PDOMapping=0
+
+[1010sub1]
+ParameterName=Save All Parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[1010sub2]
+ParameterName=Save Communication Parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[1010sub3]
+ParameterName=Save Application Parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[1010sub4]
+ParameterName=Save Manufacturer Parameters 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[1011]
+ParameterName=Restore Default Parameters
+ObjectType=0x9
+SubNumber=5
+
+[1011sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=4
+PDOMapping=0
+
+[1011sub1]
+ParameterName=Restore All Default Parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[1011sub2]
+ParameterName=Restore Communication Default Parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[1011sub3]
+ParameterName=Restore Application Default Parameters
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[1011sub4]
+ParameterName=Restore Manufacturer Defined Default Parameters 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[1012]
+ParameterName=TIME COB ID
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=256
+PDOMapping=0
+
+[1014]
+ParameterName=Emergency COB ID
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=$NODEID+0x80
+PDOMapping=0
+
+[1016]
+ParameterName=Consumer Heartbeat Time
+ObjectType=0x8
+SubNumber=2
+
+[1016sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=1
+PDOMapping=0
+
+[1016sub1]
+ParameterName=Consumer Heartbeat Time
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1017]
+ParameterName=Producer Heartbeat Time
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=10000
+PDOMapping=0
+
+[1200]
+ParameterName=Server SDO Parameter
+ObjectType=0x9
+SubNumber=3
+
+[1200sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=2
+PDOMapping=0
+
+[1200sub1]
+ParameterName=COB ID Client to Server (Receive SDO)
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=$NODEID+0x600
+PDOMapping=0
+
+[1200sub2]
+ParameterName=COB ID Server to Client (Transmit SDO)
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=$NODEID+0x580
+PDOMapping=0
+
+[1800]
+ParameterName=Transmit PDO 1 Parameter
+ObjectType=0x9
+SubNumber=6
+
+[1800sub0]
+ParameterName=Highest SubIndex Supported
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=6
+PDOMapping=0
+
+[1800sub1]
+ParameterName=COB ID used by PDO
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=$NODEID+0x180
+PDOMapping=0
+
+[1800sub2]
+ParameterName=Transmission Type
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=255
+PDOMapping=0
+
+[1800sub3]
+ParameterName=Inhibit Time
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1800sub5]
+ParameterName=Event Timer
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1800sub6]
+ParameterName=SYNC start value
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1801]
+ParameterName=Transmit PDO 2 Parameter
+ObjectType=0x9
+SubNumber=6
+
+[1801sub0]
+ParameterName=Highest SubIndex Supported
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=6
+PDOMapping=0
+
+[1801sub1]
+ParameterName=COB ID used by PDO
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=$NODEID+0x280
+PDOMapping=0
+
+[1801sub2]
+ParameterName=Transmission Type
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=255
+PDOMapping=0
+
+[1801sub3]
+ParameterName=Inhibit Time
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1801sub5]
+ParameterName=Event Timer
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1801sub6]
+ParameterName=SYNC start value
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1802]
+ParameterName=Transmit PDO 3 Parameter
+ObjectType=0x9
+SubNumber=6
+
+[1802sub0]
+ParameterName=Highest SubIndex Supported
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=6
+PDOMapping=0
+
+[1802sub1]
+ParameterName=COB ID used by PDO
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=$NODEID+0x380
+PDOMapping=0
+
+[1802sub2]
+ParameterName=Transmission Type
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=255
+PDOMapping=0
+
+[1802sub3]
+ParameterName=Inhibit Time
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1802sub5]
+ParameterName=Event Timer
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1802sub6]
+ParameterName=SYNC start value
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1803]
+ParameterName=Transmit PDO 4 Parameter
+ObjectType=0x9
+SubNumber=6
+
+[1803sub0]
+ParameterName=Highest SubIndex Supported
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=6
+PDOMapping=0
+
+[1803sub1]
+ParameterName=COB ID used by PDO
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=$NODEID+0x480
+PDOMapping=0
+
+[1803sub2]
+ParameterName=Transmission Type
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=255
+PDOMapping=0
+
+[1803sub3]
+ParameterName=Inhibit Time
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1803sub5]
+ParameterName=Event Timer
+ObjectType=0x7
+DataType=0x0006
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1803sub6]
+ParameterName=SYNC start value
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1A00]
+ParameterName=Transmit PDO 1 Mapping
+ObjectType=0x8
+SubNumber=3
+
+[1A00sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=2
+PDOMapping=0
+
+[1A00sub1]
+ParameterName=PDO 1 Mapping for a process data variable 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=536871200
+PDOMapping=0
+
+[1A00sub2]
+ParameterName=PDO 1 Mapping for a process data variable 2
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=536871456
+PDOMapping=0
+
+[1A01]
+ParameterName=Transmit PDO 2 Mapping
+ObjectType=0x8
+SubNumber=3
+
+[1A01sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=2
+PDOMapping=0
+
+[1A01sub1]
+ParameterName=PDO 2 Mapping for a process data variable 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1A01sub2]
+ParameterName=PDO 2 Mapping for a process data variable 2
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1A02]
+ParameterName=Transmit PDO 3 Mapping
+ObjectType=0x8
+SubNumber=3
+
+[1A02sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=2
+PDOMapping=0
+
+[1A02sub1]
+ParameterName=PDO 3 Mapping for a process data variable 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1A02sub2]
+ParameterName=PDO 3 Mapping for a process data variable 2
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[1A03]
+ParameterName=Transmit PDO 4 Mapping
+ObjectType=0x8
+SubNumber=2
+
+[1A03sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+PDOMapping=0
+
+[1A03sub1]
+ParameterName=PDO 4 Mapping for a process data variable 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=0
+
+[ManufacturerObjects]
+SupportedObjects=3
+1=0x2000
+2=0x2001
+3=0x2002
+
+[2000]
+ParameterName=Buttons_State
+ObjectType=0x8
+SubNumber=3
+
+[2000sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=2
+PDOMapping=0
+
+[2000sub1]
+ParameterName=Buttons_State 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2000sub2]
+ParameterName=Buttons_State 2
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0
+PDOMapping=1
+
+[2001]
+ParameterName=Leds_State
+ObjectType=0x8
+SubNumber=3
+
+[2001sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=2
+PDOMapping=0
+
+[2001sub1]
+ParameterName=Leds_State 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=1
+
+[2001sub2]
+ParameterName=Leds_State 2
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0
+PDOMapping=1
+
+[2002]
+ParameterName=Leds_ON
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=1

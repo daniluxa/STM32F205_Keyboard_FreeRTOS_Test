@@ -1,0 +1,1 @@
+void CANOPEN_CALL_BACK_INIT(void);
