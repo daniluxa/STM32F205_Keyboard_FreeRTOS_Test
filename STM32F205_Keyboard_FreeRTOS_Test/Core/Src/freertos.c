@@ -25,6 +25,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "Keyboard.h"
+#include "Keyboard_dict.h"
+#include "canfestival.h"
 
 /* USER CODE END Includes */
 
@@ -45,6 +48,9 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
+int cnt = 0;
+extern LED_Keyboard_t led_keyboard;
+extern Keyboard_t keyboard;
 
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
@@ -59,10 +65,10 @@ osThreadId vSendToUSBHandle;
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void const * argument);
-void StartTask02(void const * argument);
-void StartTask03(void const * argument);
-void StartTask04(void const * argument);
-void StartTask05(void const * argument);
+void vLedON_Handler(void const * argument);
+void vKeyboardPolling_Handler(void const * argument);
+void vSendToCAN_Handler(void const * argument);
+void vSendToUSB_Handler(void const * argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -115,19 +121,19 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of vLedON */
-  osThreadDef(vLedON, StartTask02, osPriorityRealtime, 0, 128);
+  osThreadDef(vLedON, vLedON_Handler, osPriorityRealtime, 0, 128);
   vLedONHandle = osThreadCreate(osThread(vLedON), NULL);
 
   /* definition and creation of vKeyboardPollin */
-  osThreadDef(vKeyboardPollin, StartTask03, osPriorityHigh, 0, 128);
+  osThreadDef(vKeyboardPollin, vKeyboardPolling_Handler, osPriorityHigh, 0, 128);
   vKeyboardPollinHandle = osThreadCreate(osThread(vKeyboardPollin), NULL);
 
   /* definition and creation of vSendToCAN */
-  osThreadDef(vSendToCAN, StartTask04, osPriorityIdle, 0, 128);
+  osThreadDef(vSendToCAN, vSendToCAN_Handler, osPriorityIdle, 0, 128);
   vSendToCANHandle = osThreadCreate(osThread(vSendToCAN), NULL);
 
   /* definition and creation of vSendToUSB */
-  osThreadDef(vSendToUSB, StartTask05, osPriorityIdle, 0, 128);
+  osThreadDef(vSendToUSB, vSendToUSB_Handler, osPriorityIdle, 0, 128);
   vSendToUSBHandle = osThreadCreate(osThread(vSendToUSB), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -156,76 +162,92 @@ void StartDefaultTask(void const * argument)
   /* USER CODE END StartDefaultTask */
 }
 
-/* USER CODE BEGIN Header_StartTask02 */
+/* USER CODE BEGIN Header_vLedON_Handler */
 /**
 * @brief Function implementing the vLedON thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTask02 */
-void StartTask02(void const * argument)
+/* USER CODE END Header_vLedON_Handler */
+void vLedON_Handler(void const * argument)
 {
-  /* USER CODE BEGIN StartTask02 */
-  /* Infinite loop */
+  /* USER CODE BEGIN vLedON_Handler */
+	static uint8_t i = 0;
+  TickType_t xLastWakeTime;
+	const TickType_t xFrequency = 1 / portTICK_PERIOD_MS;
+	xLastWakeTime = xTaskGetTickCount();
+	
   for(;;)
   {
-    osDelay(1);
+		LedColOFF(&led_keyboard, led_keyboard.btn[i]);
+		LedRowOFF(&led_keyboard, 1 << i);
+		if(++i > 4) 
+			i = 0;
+		LedRowON(&led_keyboard, 1 << i);
+	
+		if(led_keyboard.btn[i])
+		{
+			LedColON(&led_keyboard, led_keyboard.btn[i]);
+		}
+
+    vTaskDelayUntil(&xLastWakeTime, xFrequency);
   }
-  /* USER CODE END StartTask02 */
+  /* USER CODE END vLedON_Handler */
 }
 
-/* USER CODE BEGIN Header_StartTask03 */
+/* USER CODE BEGIN Header_vKeyboardPolling_Handler */
 /**
 * @brief Function implementing the vKeyboardPollin thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTask03 */
-void StartTask03(void const * argument)
+/* USER CODE END Header_vKeyboardPolling_Handler */
+void vKeyboardPolling_Handler(void const * argument)
 {
-  /* USER CODE BEGIN StartTask03 */
+  /* USER CODE BEGIN vKeyboardPolling_Handler */
   /* Infinite loop */
   for(;;)
   {
+		//KeyboardPollingStateFlow(&keyboard);
     osDelay(1);
   }
-  /* USER CODE END StartTask03 */
+  /* USER CODE END vKeyboardPolling_Handler */
 }
 
-/* USER CODE BEGIN Header_StartTask04 */
+/* USER CODE BEGIN Header_vSendToCAN_Handler */
 /**
 * @brief Function implementing the vSendToCAN thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTask04 */
-void StartTask04(void const * argument)
+/* USER CODE END Header_vSendToCAN_Handler */
+void vSendToCAN_Handler(void const * argument)
 {
-  /* USER CODE BEGIN StartTask04 */
+  /* USER CODE BEGIN vSendToCAN_Handler */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END StartTask04 */
+  /* USER CODE END vSendToCAN_Handler */
 }
 
-/* USER CODE BEGIN Header_StartTask05 */
+/* USER CODE BEGIN Header_vSendToUSB_Handler */
 /**
 * @brief Function implementing the vSendToUSB thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartTask05 */
-void StartTask05(void const * argument)
+/* USER CODE END Header_vSendToUSB_Handler */
+void vSendToUSB_Handler(void const * argument)
 {
-  /* USER CODE BEGIN StartTask05 */
+  /* USER CODE BEGIN vSendToUSB_Handler */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END StartTask05 */
+  /* USER CODE END vSendToUSB_Handler */
 }
 
 /* Private application code --------------------------------------------------*/

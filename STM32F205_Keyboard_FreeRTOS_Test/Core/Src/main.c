@@ -17,7 +17,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f2xx_hal.h"
+#include "main.h"
 #include "cmsis_os.h"
 #include "can.h"
 #include "i2c.h"
@@ -109,6 +109,7 @@ int main(void)
 	
 	KeyboardInit();
 	LedKeyboardInit(&led_keyboard, GPIOC, GPIOA);
+	
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

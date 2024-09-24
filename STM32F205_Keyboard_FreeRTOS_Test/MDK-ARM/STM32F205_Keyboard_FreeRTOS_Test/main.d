@@ -1,4 +1,5 @@
 stm32f205_keyboard_freertos_test\main.o: ..\Core\Src\main.c
+stm32f205_keyboard_freertos_test\main.o: ../Core/Inc/main.h
 stm32f205_keyboard_freertos_test\main.o: ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal.h
 stm32f205_keyboard_freertos_test\main.o: ../Core/Inc/stm32f2xx_hal_conf.h
 stm32f205_keyboard_freertos_test\main.o: ../Drivers/STM32F2xx_HAL_Driver/Inc/stm32f2xx_hal_rcc.h
@@ -48,7 +49,6 @@ stm32f205_keyboard_freertos_test\main.o: ../Middlewares/Third_Party/FreeRTOS/Sou
 stm32f205_keyboard_freertos_test\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 stm32f205_keyboard_freertos_test\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 stm32f205_keyboard_freertos_test\main.o: ../Core/Inc/can.h
-stm32f205_keyboard_freertos_test\main.o: ../Core/Inc/main.h
 stm32f205_keyboard_freertos_test\main.o: ../Core/Inc/i2c.h
 stm32f205_keyboard_freertos_test\main.o: ../Core/Inc/tim.h
 stm32f205_keyboard_freertos_test\main.o: ../USB_DEVICE/App/usb_device.h
